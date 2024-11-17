@@ -1,4 +1,4 @@
-# Java - Laboratory
+# Java - Laboratoria
 
 ## Lab 1
 

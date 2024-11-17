@@ -1,0 +1,6 @@
+# artifacts
+/*/out
+
+# editor
+/.idea
+/*/.idea

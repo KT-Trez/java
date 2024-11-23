@@ -8,14 +8,14 @@ public class Triangle extends Shape {
     private final int sideC;
 
     public Triangle(Color color, int sideA, int sideB, int sideC) {
+        super(color);
+
         int[] sides = {sideA, sideB, sideC};
         Arrays.sort(sides);
 
         if (sides[0] + sides[1] <= sides[2]) {
             throw new IllegalArgumentException("The given sides do not form a valid triangle.");
         }
-
-        super(color);
 
         this.sideA = sideA;
         this.sideB = sideB;

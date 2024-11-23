@@ -11,9 +11,8 @@ public record Color(int R, int G, int B, double alpha) {
     }
 
     public Color(int R, int G, int B) {
-        int alpha = 1;
-        this(R, G, B, alpha);
-        this.validateArgs(R, G, B, alpha);
+        this(R, G, B, 1);
+        this.validateArgs(R, G, B, 1);
     }
 
     private void validateArgs(int R, int G, int B, double alpha) {

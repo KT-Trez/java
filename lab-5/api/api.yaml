@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  description: Java
+  title: REST server for Java lab
+  version: 1.0.0
+servers:
+  - description: Local server
+    url: 'http://localhost:8080'
+paths:
+  /v1/shapes:
+    get:
+      description: "Get all shapes"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Shape"
+                type: "array"
+          description: "List of shapes"
+      summary: "GET /v1/shapes"
+    post:
+      description: "Create a new shape"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Shape"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Shape"
+      summary: "POST /v1/shapes"
+
+components:
+  schemas:
+    Color:
+      properties:
+        alpha:
+          type: number
+        blue:
+          type: integer
+        green:
+          type: integer
+        red:
+          type: integer
+      type: object
+    Rectangle:
+      type: object
+      properties:
+        color:
+          $ref: '#/components/schemas/Color'
+        a:
+          type: number
+        b:
+          type: number
+        type:
+          type: string
+          enum: [ rectangle ]
+    Shape:
+      oneOf:
+        - $ref: '#/components/schemas/Rectangle'
+        - $ref: '#/components/schemas/Triangle'
+    Triangle:
+      type: object
+      properties:
+        color:
+          $ref: '#/components/schemas/Color'
+        a:
+          type: number
+        b:
+          type: number
+        c:
+          type: number
+        type:
+          type: string
+          enum: [ triangle ]

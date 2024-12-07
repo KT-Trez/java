@@ -18,3 +18,9 @@
 
 * [README.md](lab-4/README.md)
 * [source](lab-4/src)
+
+## Lab 5
+
+* [README.md](lab-5/README.md)
+* [source](lab-5/src)
+

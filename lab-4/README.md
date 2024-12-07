@@ -3,3 +3,5 @@
 ![database](./assets/database.png)
 
 ![program_result](./assets/program_result.png)
+
+![coverage](./assets/coverage.png)

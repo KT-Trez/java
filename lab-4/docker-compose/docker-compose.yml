@@ -3,9 +3,11 @@ services:
   database:
     container_name: postgres
     environment:
-      POSTGRES_DB: java
+      POSTGRES_DB: java-dev
       POSTGRES_PASSWORD: zaq1@WSX
       POSTGRES_USER: admin
     image: postgres:latest
     ports:
       - "5432:5432"
+    volumes:
+      - ./postgres-startup:/docker-entrypoint-initdb.d

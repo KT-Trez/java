@@ -9,7 +9,7 @@ import jakarta.persistence.MappedSuperclass;
 public abstract class Shape {
     @Id
     @GeneratedValue
-    private Long id;
+    public Long id;
 
     // more info: https://www.baeldung.com/jpa-embedded-embeddable
     @Embedded

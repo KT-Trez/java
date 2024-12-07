@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 public class Main {
     public static void main(String[] args) {
+        // todo: error handling
         SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         Session session = sessionFactory.openSession();
         ShapeDAO shapeDAO = new ShapeDAO(session);
@@ -25,11 +26,5 @@ public class Main {
         shapeDAO.save(triangle);
 
         shapeDAO.delete(rectangle);
-
-        Shape dbTriangle = shapeDAO.findById(152L, Triangle.class);
-        describer.describe(dbTriangle);
-        dbTriangle.setColor(new Color(1, 2, 3));
-        shapeDAO.update(triangle);
-        describer.describe(shapeDAO.findById(152L, Triangle.class));
     }
 }

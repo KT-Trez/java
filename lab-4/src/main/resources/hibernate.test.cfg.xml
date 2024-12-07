@@ -7,7 +7,7 @@
     <session-factory>
         <!-- db properties -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/java-dev</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/java-qa</property>
         <property name="hibernate.connection.autocommit">true</property>
 
         <!-- probably ENV should be used for this, but whatever -.- -->
@@ -18,7 +18,7 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
 
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create-drop</property> <!-- drop and re-create the database schema on startup -->
 
         <!-- map classes to tables -->
         <mapping class="org.was.Rectangle"/>

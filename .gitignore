@@ -1,6 +1,7 @@
 # artifacts
 /*/out
 /*/target
+/*.iml
 
 # editor
 /.idea
